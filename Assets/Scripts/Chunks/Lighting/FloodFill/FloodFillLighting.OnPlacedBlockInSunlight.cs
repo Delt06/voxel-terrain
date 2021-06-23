@@ -27,11 +27,11 @@ namespace Chunks.Lighting.FloodFill
 
                     SetSunlight(CenterLightmapValues, BlockIndex, 0);
                     lightRemovalBfsQueue.Enqueue(new LightingRemovalNode
-                        {
-                            BlockIndex = BlockIndex,
-                            ChunkXZ = Args.CenterChunkXZ,
-                            LightLevel = SunlightValue,
-                        }
+                    {
+                        BlockIndex = BlockIndex,
+                        ChunkXZ = Args.CenterChunkXZ,
+                        LightLevel = SunlightValue,
+                    }
                     );
                     Args.ModifiedChunkPositions.Add(Args.CenterChunkXZ);
 
@@ -108,21 +108,21 @@ namespace Chunks.Lighting.FloodFill
                 {
                     SetSunlight(neighborLightmapValues, neighborBlockIndex, 0);
                     args.RemovalBfsQueue.Enqueue(new LightingRemovalNode
-                        {
-                            ChunkXZ = neighborXZ,
-                            BlockIndex = neighborBlockIndex,
-                            LightLevel = neighborLightLevel,
-                        }
+                    {
+                        ChunkXZ = neighborXZ,
+                        BlockIndex = neighborBlockIndex,
+                        LightLevel = neighborLightLevel,
+                    }
                     );
                     args.ModifiedChunkPositions.Add(neighborXZ);
                 }
                 else if (neighborLightLevel >= lightLevel)
                 {
                     args.LightBfsQueue.Enqueue(new FloodFillNode
-                        {
-                            ChunkXZ = neighborXZ,
-                            BlockIndex = neighborBlockIndex,
-                        }
+                    {
+                        ChunkXZ = neighborXZ,
+                        BlockIndex = neighborBlockIndex,
+                    }
                     );
                 }
             }

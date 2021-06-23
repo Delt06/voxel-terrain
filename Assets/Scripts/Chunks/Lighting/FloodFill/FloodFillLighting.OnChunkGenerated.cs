@@ -59,10 +59,10 @@ namespace Chunks.Lighting.FloodFill
                         var blockIndex = SunlightSourceIndices[i];
                         SetSunlight(LightmapValues, blockIndex, LightingUtils.MaxLightValue);
                         LightBfsQueue.Enqueue(new FloodFillNode
-                            {
-                                ChunkXZ = ChunkXZ,
-                                BlockIndex = blockIndex,
-                            }
+                        {
+                            ChunkXZ = ChunkXZ,
+                            BlockIndex = blockIndex,
+                        }
                         );
                     }
                 }
@@ -88,19 +88,19 @@ namespace Chunks.Lighting.FloodFill
 
                 var blockIndices = new NativeList<int>(0, Allocator.TempJob);
                 return new FindSunlightSourcesJob
-                    {
-                        Blocks = blocks,
-                        ChunkSize = args.ChunkSize,
-                        SunlightSourceIndices = blockIndices,
-                    }
+                {
+                    Blocks = blocks,
+                    ChunkSize = args.ChunkSize,
+                    SunlightSourceIndices = blockIndices,
+                }
                     .Schedule()
                     .Then(new ProcessFoundSunlightSourcesJob
-                        {
-                            LightmapValues = lightmaps,
-                            ChunkXZ = args.CenterChunkXZ,
-                            LightBfsQueue = args.BfsQueue,
-                            SunlightSourceIndices = blockIndices,
-                        }
+                    {
+                        LightmapValues = lightmaps,
+                        ChunkXZ = args.CenterChunkXZ,
+                        LightBfsQueue = args.BfsQueue,
+                        SunlightSourceIndices = blockIndices,
+                    }
                     )
                     .ThenDispose(blockIndices)
                     .Then(new FloodFillLightJob { Args = args });
@@ -153,10 +153,10 @@ namespace Chunks.Lighting.FloodFill
                 if (sunlight == 0) return;
 
                 args.BfsQueue.Enqueue(new FloodFillNode
-                    {
-                        ChunkXZ = neighborXZ,
-                        BlockIndex = neighborBlockIndex,
-                    }
+                {
+                    ChunkXZ = neighborXZ,
+                    BlockIndex = neighborBlockIndex,
+                }
                 );
                 args.ModifiedChunkPositions.Add(neighborXZ);
             }
@@ -225,10 +225,10 @@ namespace Chunks.Lighting.FloodFill
 
                 SetSunlight(neighborLightmapValues, neighborBlockIndex, propagatedLightLevel);
                 args.BfsQueue.Enqueue(new FloodFillNode
-                    {
-                        ChunkXZ = neighborXZ,
-                        BlockIndex = neighborBlockIndex,
-                    }
+                {
+                    ChunkXZ = neighborXZ,
+                    BlockIndex = neighborBlockIndex,
+                }
                 );
                 args.ModifiedChunkPositions.Add(neighborXZ);
             }

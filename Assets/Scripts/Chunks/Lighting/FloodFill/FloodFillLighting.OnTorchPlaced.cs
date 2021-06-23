@@ -26,10 +26,10 @@ namespace Chunks.Lighting.FloodFill
                     var lightBfsQueue = Args.BfsQueue;
                     SetTorchlight(CenterLightmapValues, BlockIndex, Emission);
                     lightBfsQueue.Enqueue(new FloodFillNode
-                        {
-                            BlockIndex = BlockIndex,
-                            ChunkXZ = chunkXZ,
-                        }
+                    {
+                        BlockIndex = BlockIndex,
+                        ChunkXZ = chunkXZ,
+                    }
                     );
                     Args.ModifiedChunkPositions.Add(chunkXZ);
                     FloodFillLight(Args);
@@ -97,10 +97,10 @@ namespace Chunks.Lighting.FloodFill
                 if (!block.EmitsLight() && torchlight == 0) return;
 
                 args.BfsQueue.Enqueue(new FloodFillNode
-                    {
-                        ChunkXZ = neighborXZ,
-                        BlockIndex = neighborBlockIndex,
-                    }
+                {
+                    ChunkXZ = neighborXZ,
+                    BlockIndex = neighborBlockIndex,
+                }
                 );
                 args.ModifiedChunkPositions.Add(neighborXZ);
             }
@@ -161,10 +161,10 @@ namespace Chunks.Lighting.FloodFill
 
                 SetTorchlight(neighborLightmapValues, neighborBlockIndex, propagatedLightLevel);
                 args.BfsQueue.Enqueue(new FloodFillNode
-                    {
-                        ChunkXZ = neighborXZ,
-                        BlockIndex = neighborBlockIndex,
-                    }
+                {
+                    ChunkXZ = neighborXZ,
+                    BlockIndex = neighborBlockIndex,
+                }
                 );
                 args.ModifiedChunkPositions.Add(neighborXZ);
             }

@@ -1,0 +1,5 @@
+﻿<linker>
+    <assembly fullname="Unity.Collections" preserve="all" />
+    <assembly fullname="Unity.Jobs" preserve="all" />
+    <assembly fullname="Unity.Burst" preserve="all" />
+</linker>

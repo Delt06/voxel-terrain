@@ -1,4 +1,6 @@
 ﻿# Voxel Terrain
+![Screenshot](Documentation/screenshot.jpg)
+
 A technical demo of voxel world Unity implementation. Heavily relies on URP, Jobs, and Burst Compiler. 
 
 > Implemented with Unity 2020.3.0f1

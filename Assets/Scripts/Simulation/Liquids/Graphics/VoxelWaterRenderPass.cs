@@ -62,6 +62,7 @@ namespace Simulation.Liquids.Graphics
             context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref _filteringSettings,
                 ref _renderStateBlock
             );
+
             if (renderingData.SupportsTransparentWater())
             {
                 cmd.SetRenderTarget(renderingData.cameraData.renderer.cameraColorTarget);

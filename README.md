@@ -26,5 +26,5 @@ a.k.a. TODO:
 
 ## Useful Links
 - [Meshing algorithms comparison](https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/) 
-- Flood Fill Lighting algorithm: [part 1](https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1), [part 2](https://www.seedofandromeda.com/blogs/30-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-2).
+- Flood Fill Lighting algorithm (no longer available): [part 1](https://www.seedofandromeda.com/blogs/29-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-1), [part 2](https://www.seedofandromeda.com/blogs/30-fast-flood-fill-lighting-in-a-blocky-voxel-game-pt-2).
 - [Article series on how to work with SRP](https://catlikecoding.com/unity/tutorials/custom-srp/)
